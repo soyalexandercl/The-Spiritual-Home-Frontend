@@ -1,11 +1,8 @@
 /* --- SECCIÓN HERO --- */
 .seccionHero {
-    /* AQUÍ VA TU FOTO: Cambia 'tu-foto.jpg' por el nombre de tu imagen real.
-       El linear-gradient crea una sombra oscura a la izquierda para que el texto dorado resalte,
-       y se vuelve transparente a la derecha para que te veas perfecto.
-    */
     background-image: 
-        linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 45%, rgba(0, 0, 0, 0) 100%),
+        linear-gradient(to bottom, rgba(5, 5, 5, 0) 75%, #050505 100%),
+        linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 45%, rgba(0, 0, 0, 0) 100%),
         url('foto-autor.jpg');
     background-size: cover;
     background-position: center top;
@@ -13,18 +10,18 @@
     
     min-height: 100vh;
     display: flex;
-    align-items: center; /* Centra el contenido verticalmente */
+    align-items: center; 
     padding: 0 5%;
 }
 
 .contenedorMensajeIzquierdo {
-    width: 50%; /* Obliga al texto a quedarse solo en la mitad izquierda */
+    width: 50%; 
     max-width: 650px;
-    margin-top: 50px; /* Compensa la altura de la navegación */
+    margin-top: 50px; 
 }
 
 .mensajePrincipal {
-    font-size: 3.5rem; /* Letra bien grande como pediste */
+    font-size: 3.5rem; 
     line-height: 1.2;
     margin-bottom: 40px;
     font-style: italic;
@@ -36,47 +33,131 @@
     font-size: 1.2rem;
     letter-spacing: 4px;
     font-family: var(--fuenteSans);
-    border-top: 1px solid var(--colorDorado); /* Línea decorativa estilo tu referencia */
+    border-top: 1px solid var(--colorDorado); 
     display: inline-block;
     padding-top: 20px;
 }
 
-/* --- SECCIÓN SERVICIOS --- */
+/* --- SECCIÓN SERVICIOS CON IMÁGENES --- */
 .seccionServicios {
-    padding: 80px 5%;
+    background-color: #050505; 
+    padding: 60px 5% 120px 5%;
     text-align: center;
 }
 
 .tituloServicios {
-    font-size: 2.5rem;
-    margin-bottom: 50px;
+    font-size: 3rem;
+    margin-bottom: 80px;
+    letter-spacing: 5px;
+    color: var(--colorBlanco);
+    position: relative;
+    display: inline-block;
+}
+
+.tituloServicios::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background-color: var(--colorDorado);
 }
 
 .contenedorTarjetasServicios {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 30px;
     flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* Estructura Base de las Tarjetas */
 .tarjetaServicio {
-    border: 1px solid rgba(197, 160, 89, 0.3); /* Borde dorado tenue */
-    padding: 40px;
-    width: 300px;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    border-bottom: 3px solid rgba(197, 160, 89, 0.5);
+    width: 320px;
+    min-height: 400px; /* Un poco más altas para lucir bien la foto */
+    display: flex;
+    align-items: flex-end; /* Coloca el texto en la parte inferior */
+    justify-content: center;
+    padding-bottom: 40px;
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
+/* Capa oscura superpuesta para asegurar que el texto sea visible */
+.tarjetaServicio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Un gradiente que es más oscuro abajo (donde va el texto) */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.85) 100%);
+    transition: background 0.5s ease;
+    z-index: 1;
+}
+
+/* Efectos al pasar el cursor */
 .tarjetaServicio:hover {
-    transform: translateY(-5px);
-    border-color: var(--colorDorado);
+    transform: translateY(-15px);
+    border-bottom: 3px solid var(--colorDorado);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 30px rgba(197, 160, 89, 0.2);
+}
+
+/* Aclara un poco la imagen al hacer hover para darle vida */
+.tarjetaServicio:hover::before {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%);
 }
 
 .nombreServicio {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    color: var(--colorBlanco);
+    font-family: var(--fuenteSerif);
+    font-style: italic;
+    transition: color 0.4s ease, transform 0.4s ease;
+    z-index: 2;
+    position: relative;
+}
+
+.tarjetaServicio:hover .nombreServicio {
     color: var(--colorDorado);
+    transform: translateY(-5px); /* El texto sube sutilmente */
 }
 
 .enlaceServicio {
     text-decoration: none;
-    display: block; /* Para que toda el área sea clickeable hacia Airbnb */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 40px;
+    z-index: 3;
+}
+
+/* --- ASIGNACIÓN DE IMÁGENES A CADA TARJETA --- */
+.tarjetaRitual {
+    background-image: url('4 - tea ceremony picture.jpg');
+}
+
+.tarjetaSesion {
+    background-image: url('6 - relaxation picture.jpg');
+}
+
+.tarjetaHogar {
+    background-image: url('exterior.webp');
 }
