@@ -106,40 +106,6 @@ h1, h2, h3 {
     padding-bottom: 5px;
 }
 
-/* --- BOTONES GLOBALES --- */
-.contenedorBotones {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.botonSecundario {
-    text-decoration: none;
-    color: var(--colorGrisClaro);
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
-}
-
-.botonSecundario:hover {
-    color: var(--colorBlanco);
-}
-
-.botonPrimario {
-    text-decoration: none;
-    color: var(--colorDorado);
-    border: 1px solid var(--colorDorado);
-    padding: 10px 25px;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-}
-
-.botonPrimario:hover {
-    background-color: var(--colorDorado);
-    color: var(--colorOscuro);
-}
-
 /* =========================================
    MEDIA QUERIES: MAGIA DEL MENÚ MÓVIL
    ========================================= */
@@ -172,18 +138,6 @@ h1, h2, h3 {
 
     .enlaceNavegacion {
         font-size: 1.3rem; /* Letras mucho más grandes y fáciles de tocar */
-    }
-
-    .contenedorBotones {
-        flex-direction: column;
-        width: 100%;
-        max-width: 280px;
-    }
-
-    .botonSecundario, .botonPrimario {
-        width: 100%;
-        text-align: center;
-        padding: 15px;
     }
 
     /* ACCIÓN: Cuando se hace clic en el botón (el checkbox se marca) */

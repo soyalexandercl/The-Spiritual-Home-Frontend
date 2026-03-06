@@ -4,8 +4,8 @@
     background-image: 
         linear-gradient(to right, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%),
         url('../imagenes/foto-autor.jpg');
-    background-size: cover;
-    background-position: center top;
+    background-size: 120%;
+    background-position: 0% top;
     background-repeat: no-repeat;
     
     min-height: 100vh;
@@ -16,16 +16,15 @@
 
 .contenedorMensajeIzquierdo {
     width: 50%; 
-    max-width: 700px;
-    margin-top: 50px; 
+    max-width: 700px; 
     position: relative;
     z-index: 10; /* Asegura que siempre esté por encima del fondo */
 }
 
 .mensajePrincipal {
-    font-size: 3.8rem; /* Un poco más grande y elegante en PC */
+    font-size: 3.5rem; /* Un poco más grande y elegante en PC */
     line-height: 1.15;
-    margin-bottom: 40px;
+    margin-top: 100px;
     font-style: italic;
     color: var(--colorDorado);
     text-shadow: 2px 2px 15px rgba(0,0,0,0.8); /* Sombra extra para proteger el texto */
@@ -33,12 +32,12 @@
 
 .nombreAutor {
     color: var(--colorDorado);
-    font-size: 1.2rem;
+    font-size: 3.5rem;
     letter-spacing: 5px;
     font-family: var(--fuenteSans);
     border-top: 1px solid rgba(197, 160, 89, 0.5); 
     display: inline-block;
-    padding-top: 20px;
+    margin-top: 20px;
 }
 
 /* --- BOTONES DE SERVICIOS INTEGRADOS --- */
