@@ -1,8 +1,8 @@
-/* --- SECCIÓN HERO --- */
+/* --- SECCIÓN HERO (PANTALLA COMPLETA) --- */
 .seccionHero {
+    /* Fondo elegante con un ligero ajuste en el gradiente para asegurar lectura */
     background-image: 
-        linear-gradient(to bottom, rgba(5, 5, 5, 0) 75%, #050505 100%),
-        linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 45%, rgba(0, 0, 0, 0) 100%),
+        linear-gradient(to right, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%),
         url('foto-autor.jpg');
     background-size: cover;
     background-position: center top;
@@ -16,148 +16,125 @@
 
 .contenedorMensajeIzquierdo {
     width: 50%; 
-    max-width: 650px;
+    max-width: 700px;
     margin-top: 50px; 
+    position: relative;
+    z-index: 10; /* Asegura que siempre esté por encima del fondo */
 }
 
 .mensajePrincipal {
-    font-size: 3.5rem; 
-    line-height: 1.2;
+    font-size: 3.8rem; /* Un poco más grande y elegante en PC */
+    line-height: 1.15;
     margin-bottom: 40px;
     font-style: italic;
     color: var(--colorDorado);
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.8); /* Sombra extra para proteger el texto */
 }
 
 .nombreAutor {
     color: var(--colorDorado);
     font-size: 1.2rem;
-    letter-spacing: 4px;
+    letter-spacing: 5px;
     font-family: var(--fuenteSans);
-    border-top: 1px solid var(--colorDorado); 
+    border-top: 1px solid rgba(197, 160, 89, 0.5); 
     display: inline-block;
     padding-top: 20px;
+    text-transform: uppercase;
 }
 
-/* --- SECCIÓN SERVICIOS CON IMÁGENES --- */
-.seccionServicios {
-    background-color: #050505; 
-    padding: 60px 5% 120px 5%;
-    text-align: center;
+/* --- BOTONES DE SERVICIOS INTEGRADOS --- */
+.contenedorServiciosHero {
+    margin-top: 50px; 
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; 
 }
 
-.tituloServicios {
-    font-size: 3rem;
-    margin-bottom: 80px;
-    letter-spacing: 5px;
-    color: var(--colorBlanco);
-    position: relative;
+.botonServicioFantasma {
     display: inline-block;
-}
-
-.tituloServicios::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 3px;
-    background-color: var(--colorDorado);
-}
-
-.contenedorTarjetasServicios {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Estructura Base de las Tarjetas */
-.tarjetaServicio {
-    border: 1px solid rgba(197, 160, 89, 0.2);
-    border-bottom: 3px solid rgba(197, 160, 89, 0.5);
-    width: 320px;
-    min-height: 400px; /* Un poco más altas para lucir bien la foto */
-    display: flex;
-    align-items: flex-end; /* Coloca el texto en la parte inferior */
-    justify-content: center;
-    padding-bottom: 40px;
-    position: relative;
-    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* Capa oscura superpuesta para asegurar que el texto sea visible */
-.tarjetaServicio::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Un gradiente que es más oscuro abajo (donde va el texto) */
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.85) 100%);
-    transition: background 0.5s ease;
-    z-index: 1;
-}
-
-/* Efectos al pasar el cursor */
-.tarjetaServicio:hover {
-    transform: translateY(-15px);
-    border-bottom: 3px solid var(--colorDorado);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 30px rgba(197, 160, 89, 0.2);
-}
-
-/* Aclara un poco la imagen al hacer hover para darle vida */
-.tarjetaServicio:hover::before {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%);
-}
-
-.nombreServicio {
-    font-size: 1.8rem;
-    color: var(--colorBlanco);
-    font-family: var(--fuenteSerif);
-    font-style: italic;
-    transition: color 0.4s ease, transform 0.4s ease;
-    z-index: 2;
-    position: relative;
-}
-
-.tarjetaServicio:hover .nombreServicio {
-    color: var(--colorDorado);
-    transform: translateY(-5px); /* El texto sube sutilmente */
-}
-
-.enlaceServicio {
+    width: fit-content; 
+    padding: 12px 30px;
+    border: 1px solid rgba(197, 160, 89, 0.3); 
+    border-radius: 50px; 
+    color: var(--colorGrisClaro);
     text-decoration: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-bottom: 40px;
-    z-index: 3;
+    font-family: var(--fuenteSans);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.2); /* Un fondo casi transparente para destacar más */
+    backdrop-filter: blur(5px); /* Efecto cristal sutil */
+    transition: all 0.4s ease; 
 }
 
-/* --- ASIGNACIÓN DE IMÁGENES A CADA TARJETA --- */
-.tarjetaRitual {
-    background-image: url('4 - tea ceremony picture.jpg');
+.botonServicioFantasma:hover {
+    background-color: var(--colorDorado);
+    color: var(--colorOscuro);
+    border-color: var(--colorDorado);
+    transform: translateX(15px); 
+    box-shadow: 0 5px 20px rgba(197, 160, 89, 0.3);
 }
 
-.tarjetaSesion {
-    background-image: url('6 - relaxation picture.jpg');
+
+/* =========================================
+   MEDIA QUERIES PARA RESPONSIVIDAD (HERO)
+   ========================================= */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 1024px) {
+    .contenedorMensajeIzquierdo {
+        width: 70%; 
+    }
+    .mensajePrincipal {
+        font-size: 3rem; 
+    }
 }
 
-.tarjetaHogar {
-    background-image: url('exterior.webp');
+/* Teléfonos móviles */
+@media (max-width: 768px) {
+    .seccionHero {
+        /* En móvil, oscurecemos más el fondo general para que el texto resalte sobre la imagen centrada */
+        background-image: 
+            linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.9) 100%),
+            url('foto-autor.jpg');
+        background-position: 70% top; /* Centra un poco más la foto para que se vea tu rostro */
+        align-items: flex-end; /* Baja el texto para dejar ver la cara en la parte superior */
+        padding-bottom: 10vh; /* Da respiro en la parte inferior */
+    }
+
+    .contenedorMensajeIzquierdo {
+        width: 100%; 
+        margin-top: 150px; /* Compensa la cabecera apilada */
+        text-align: center; /* Centramos el texto en móviles para que se vea mejor */
+    }
+
+    .mensajePrincipal {
+        font-size: 2.2rem; 
+        margin-bottom: 30px;
+    }
+
+    .nombreAutor {
+        font-size: 1rem;
+        border-top: none;
+        border-bottom: 1px solid rgba(197, 160, 89, 0.5); /* Cambiamos la línea decorativa de arriba hacia abajo */
+        padding-top: 0;
+        padding-bottom: 20px;
+    }
+
+    .contenedorServiciosHero {
+        margin-top: 40px;
+        align-items: center; /* Centra los botones en móvil */
+        width: 100%;
+    }
+
+    .botonServicioFantasma {
+        width: 100%; /* Botones de lado a lado para fácil pulsación táctil */
+        max-width: 350px; /* Evita que sean exageradamente largos */
+        text-align: center;
+        padding: 15px 20px; /* Más altos para los dedos */
+    }
+
+    .botonServicioFantasma:hover {
+        transform: translateY(-5px); /* En móvil, al presionar suben, en vez de ir a la derecha */
+    }
 }
