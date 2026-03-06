@@ -3,7 +3,7 @@
     /* Fondo elegante con un ligero ajuste en el gradiente para asegurar lectura */
     background-image: 
         linear-gradient(to right, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%),
-        url('foto-autor.jpg');
+        url('../imagenes/foto-autor.jpg');
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
@@ -39,7 +39,6 @@
     border-top: 1px solid rgba(197, 160, 89, 0.5); 
     display: inline-block;
     padding-top: 20px;
-    text-transform: uppercase;
 }
 
 /* --- BOTONES DE SERVICIOS INTEGRADOS --- */
@@ -61,7 +60,6 @@
     font-family: var(--fuenteSans);
     font-size: 0.9rem;
     letter-spacing: 2px;
-    text-transform: uppercase;
     background-color: rgba(0, 0, 0, 0.2); /* Un fondo casi transparente para destacar más */
     backdrop-filter: blur(5px); /* Efecto cristal sutil */
     transition: all 0.4s ease; 
@@ -96,7 +94,7 @@
         /* En móvil, oscurecemos más el fondo general para que el texto resalte sobre la imagen centrada */
         background-image: 
             linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.9) 100%),
-            url('foto-autor.jpg');
+            url('../imagenes/foto-autor.jpg');
         background-position: 70% top; /* Centra un poco más la foto para que se vea tu rostro */
         align-items: flex-end; /* Baja el texto para dejar ver la cara en la parte superior */
         padding-bottom: 10vh; /* Da respiro en la parte inferior */
