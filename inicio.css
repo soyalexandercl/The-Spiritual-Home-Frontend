@@ -1,0 +1,82 @@
+/* --- SECCIÓN HERO --- */
+.seccionHero {
+    /* AQUÍ VA TU FOTO: Cambia 'tu-foto.jpg' por el nombre de tu imagen real.
+       El linear-gradient crea una sombra oscura a la izquierda para que el texto dorado resalte,
+       y se vuelve transparente a la derecha para que te veas perfecto.
+    */
+    background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 45%, rgba(0, 0, 0, 0) 100%),
+        url('foto-autor.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    
+    min-height: 100vh;
+    display: flex;
+    align-items: center; /* Centra el contenido verticalmente */
+    padding: 0 5%;
+}
+
+.contenedorMensajeIzquierdo {
+    width: 50%; /* Obliga al texto a quedarse solo en la mitad izquierda */
+    max-width: 650px;
+    margin-top: 50px; /* Compensa la altura de la navegación */
+}
+
+.mensajePrincipal {
+    font-size: 3.5rem; /* Letra bien grande como pediste */
+    line-height: 1.2;
+    margin-bottom: 40px;
+    font-style: italic;
+    color: var(--colorDorado);
+}
+
+.nombreAutor {
+    color: var(--colorDorado);
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    font-family: var(--fuenteSans);
+    border-top: 1px solid var(--colorDorado); /* Línea decorativa estilo tu referencia */
+    display: inline-block;
+    padding-top: 20px;
+}
+
+/* --- SECCIÓN SERVICIOS --- */
+.seccionServicios {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.tituloServicios {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.contenedorTarjetasServicios {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.tarjetaServicio {
+    border: 1px solid rgba(197, 160, 89, 0.3); /* Borde dorado tenue */
+    padding: 40px;
+    width: 300px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjetaServicio:hover {
+    transform: translateY(-5px);
+    border-color: var(--colorDorado);
+}
+
+.nombreServicio {
+    font-size: 1.5rem;
+    color: var(--colorDorado);
+}
+
+.enlaceServicio {
+    text-decoration: none;
+    display: block; /* Para que toda el área sea clickeable hacia Airbnb */
+}

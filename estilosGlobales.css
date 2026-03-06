@@ -1,0 +1,110 @@
+/* Variables Globales */
+:root {
+    --colorDorado: #c5a059;
+    --colorBlanco: #ffffff;
+    --colorOscuro: #0a0a0a;
+    --colorGrisClaro: #e0e0e0;
+    --fuenteSerif: 'Georgia', serif;
+    --fuenteSans: 'Arial', sans-serif;
+}
+
+/* Reseteo Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--colorOscuro);
+    color: var(--colorBlanco);
+    font-family: var(--fuenteSans);
+    line-height: 1.6;
+}
+
+/* Títulos Globales */
+h1, h2, h3 {
+    color: var(--colorDorado);
+    font-family: var(--fuenteSerif);
+    font-weight: normal;
+}
+
+/* --- NAVEGACIÓN GLOBAL --- */
+.encabezadoPrincipal {
+    position: absolute; /* Para que quede encima de la foto */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 5%;
+    z-index: 100;
+}
+
+.navegacionPrincipal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logotipoTextual {
+    font-family: var(--fuenteSerif);
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--colorBlanco);
+}
+
+.listaNavegacion {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.enlaceNavegacion {
+    text-decoration: none;
+    color: var(--colorGrisClaro);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.enlaceNavegacion:hover, .enlaceNavegacion.activo {
+    color: var(--colorDorado);
+}
+
+.activo {
+    border-bottom: 1px solid var(--colorDorado);
+    padding-bottom: 5px;
+}
+
+/* --- BOTONES GLOBALES --- */
+.contenedorBotones {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.botonSecundario {
+    text-decoration: none;
+    color: var(--colorGrisClaro);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.botonSecundario:hover {
+    color: var(--colorBlanco);
+}
+
+.botonPrimario {
+    text-decoration: none;
+    color: var(--colorDorado);
+    border: 1px solid var(--colorDorado);
+    padding: 10px 25px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.botonPrimario:hover {
+    background-color: var(--colorDorado);
+    color: var(--colorOscuro);
+}
