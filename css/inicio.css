@@ -1,4 +1,3 @@
-/* --- SECCIÓN HERO (ESCRITORIO - ALINEADO A LA IZQUIERDA) --- */
 .seccionHero {
     background-image: 
             linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.95) 100%),
@@ -20,13 +19,26 @@
     z-index: 10;
 }
 
+@keyframes subirAparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .mensajePrincipal {
     font-size: 42px; 
     line-height: 1.15;
     margin-top: 100px;
     font-style: italic;
     color: var(--colorDorado);
-    text-shadow: 2px 2px 15px rgba(0,0,0,0.8);
+    text-shadow: 2px 4px 20px rgba(0,0,0,0.9);
+    opacity: 0;
+    animation: subirAparecer 1s cubic-bezier(0.25, 0.8, 0.25, 1) 0.3s forwards;
 }
 
 .nombreAutor {
@@ -38,6 +50,8 @@
     display: inline-block;
     margin-top: 15px; 
     padding-top: 15px;
+    opacity: 0;
+    animation: subirAparecer 1s cubic-bezier(0.25, 0.8, 0.25, 1) 0.6s forwards;
 }
 
 .contenedorServiciosHero {
@@ -45,12 +59,14 @@
     display: flex;
     flex-direction: column; 
     gap: 15px; 
+    opacity: 0;
+    animation: subirAparecer 1s cubic-bezier(0.25, 0.8, 0.25, 1) 0.9s forwards;
 }
 
 .botonServicioFantasma {
     display: inline-block;
     width: fit-content; 
-    padding: 11px 28px; 
+    padding: 12px 30px; 
     border: 1px solid rgba(197, 160, 89, 0.3); 
     border-radius: 50px; 
     color: var(--colorGrisClaro);
@@ -58,74 +74,17 @@
     font-family: var(--fuenteSans);
     font-size: 13px; 
     letter-spacing: 2px;
-    background-color: rgba(0, 0, 0, 0.2); 
+    background-color: rgba(0, 0, 0, 0.3); 
     backdrop-filter: blur(5px);
-    transition: all 0.4s ease; 
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); 
+    position: relative;
+    overflow: hidden;
 }
 
 .botonServicioFantasma:hover {
-    background-color: var(--colorDorado);
-    color: var(--colorOscuro);
+    background-color: rgba(197, 160, 89, 0.15);
+    color: var(--colorDorado);
     border-color: var(--colorDorado);
-    transform: translateX(15px); 
-    box-shadow: 0 5px 20px rgba(197, 160, 89, 0.3);
-}
-
-
-/* =========================================
-   MEDIA QUERY UNIFICADA: DISPOSITIVOS MÓVILES Y TABLETS
-   (Centrado Horizontal y Estilos Finales)
-   ========================================= */
-
-@media (max-width: 900px) {
-    .seccionHero {
-        background-image: 
-                linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.95) 100%),
-                url('../imagenes/foto-autor-2.png');
-        padding: 0 20px; 
-    }
-
-    /* Aquí aplicamos el centrado horizontal absoluto a todo el bloque */
-    .contenedorMensaje {
-        max-width: 800px;
-        margin: 0 auto;
-        margin-top: 100px; 
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Centra los elementos hijos horizontalmente */
-        text-align: center; /* Centra el texto interno */
-    }
-
-    /* Tamaños de letra finales (reducidos y elegantes) */
-    .mensajePrincipal {
-        font-size: 28px; 
-        margin-top: 0;
-        margin-bottom: 20px; 
-    }
-
-    .nombreAutor {
-        font-size: 28px; 
-        border-top: 1px solid rgba(197, 160, 89, 0.4); 
-        padding-top: 15px;
-        margin-top: 0;
-    }
-
-    .contenedorServiciosHero {
-        margin-top: 35px; 
-        align-items: center; /* Asegura que los botones también se centren */
-        width: 100%;
-        gap: 12px;
-    }
-
-    /* Botones táctiles adaptados */
-    .botonServicioFantasma {
-        width: 100%; 
-        max-width: 380px; 
-        padding: 15px 20px; 
-        font-size: 13px;
-    }
-
-    .botonServicioFantasma:hover {
-        transform: translateY(-5px); /* En móvil la animación es hacia arriba */
-    }
+    transform: translateX(15px);
+    box-shadow: 0 0 25px rgba(197, 160, 89, 0.4), inset 0 0 10px rgba(197, 160, 89, 0.2);
 }
