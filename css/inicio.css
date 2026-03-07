@@ -1,4 +1,4 @@
-/* --- SECCIÓN HERO (PANTALLA COMPLETA ESCRITORIO) --- */
+/* --- SECCIÓN HERO (ESCRITORIO - ALINEADO A LA IZQUIERDA) --- */
 .seccionHero {
     background-image: 
             linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.95) 100%),
@@ -10,10 +10,10 @@
     min-height: 100vh;
     display: flex;
     align-items: center; 
-    padding: 0 20px;
+    padding: 0 5%;
 }
 
-.contenedorMensajeIzquierdo {
+.contenedorMensaje {
     width: 50%; 
     max-width: 700px; 
     position: relative;
@@ -21,7 +21,7 @@
 }
 
 .mensajePrincipal {
-    font-size: 3rem; 
+    font-size: 42px; 
     line-height: 1.15;
     margin-top: 100px;
     font-style: italic;
@@ -31,16 +31,17 @@
 
 .nombreAutor {
     color: var(--colorDorado);
-    font-size: 3rem;
+    font-size: 42px; 
     letter-spacing: 5px;
     font-family: var(--fuenteSans);
-    border-top: 1px solid rgba(197, 160, 89, 0.5); 
+    border-top: 1px solid rgba(197, 160, 89, 0.4); 
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 15px; 
+    padding-top: 15px;
 }
 
 .contenedorServiciosHero {
-    margin-top: 50px; 
+    margin-top: 45px; 
     display: flex;
     flex-direction: column; 
     gap: 15px; 
@@ -49,13 +50,13 @@
 .botonServicioFantasma {
     display: inline-block;
     width: fit-content; 
-    padding: 12px 30px;
+    padding: 11px 28px; 
     border: 1px solid rgba(197, 160, 89, 0.3); 
     border-radius: 50px; 
     color: var(--colorGrisClaro);
     text-decoration: none;
     font-family: var(--fuenteSans);
-    font-size: 0.85rem;
+    font-size: 13px; 
     letter-spacing: 2px;
     background-color: rgba(0, 0, 0, 0.2); 
     backdrop-filter: blur(5px);
@@ -72,54 +73,59 @@
 
 
 /* =========================================
-   MEDIA QUERIES PARA RESPONSIVIDAD (HERO)
+   MEDIA QUERY UNIFICADA: DISPOSITIVOS MÓVILES Y TABLETS
+   (Centrado Horizontal y Estilos Finales)
    ========================================= */
 
-
-/* Teléfonos Móviles (Pantallas Pequeñas) */
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
     .seccionHero {
         background-image: 
                 linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.95) 100%),
                 url('../imagenes/foto-autor-2.png');
+        padding: 0 20px; 
     }
 
-    .contenedorMensajeIzquierdo {
-        width: 100%; 
-        margin-top: 100px; /* Separación del menú hamburguesa */
-        text-align: center; /* Centrado total para móvil */
+    /* Aquí aplicamos el centrado horizontal absoluto a todo el bloque */
+    .contenedorMensaje {
+        max-width: 800px;
+        margin: 0 auto;
+        margin-top: 100px; 
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra los elementos hijos horizontalmente */
+        text-align: center; /* Centra el texto interno */
     }
 
+    /* Tamaños de letra finales (reducidos y elegantes) */
     .mensajePrincipal {
-        font-size: 2.2rem; /* Tamaño optimizado para móvil */
+        font-size: 28px; 
         margin-top: 0;
-        margin-bottom: 20px;
+        margin-bottom: 20px; 
     }
 
     .nombreAutor {
-        font-size: 2.2rem;
-        border-top: none;
-        border-bottom: 1px solid rgba(197, 160, 89, 0.5); /* La línea se ve mejor abajo en móvil */
-        padding-bottom: 15px;
+        font-size: 28px; 
+        border-top: 1px solid rgba(197, 160, 89, 0.4); 
+        padding-top: 15px;
         margin-top: 0;
     }
 
     .contenedorServiciosHero {
-        margin-top: 30px;
-        align-items: center; /* Centra los botones */
+        margin-top: 35px; 
+        align-items: center; /* Asegura que los botones también se centren */
         width: 100%;
         gap: 12px;
     }
 
+    /* Botones táctiles adaptados */
     .botonServicioFantasma {
         width: 100%; 
-        max-width: 90%; /* Evita que toquen el borde de la pantalla */
-        text-align: center;
-        padding: 15px 20px; /* Más altos, ideal para tocar con los dedos */
-        font-size: 0.8rem;
+        max-width: 380px; 
+        padding: 15px 20px; 
+        font-size: 13px;
     }
 
     .botonServicioFantasma:hover {
-        transform: translateY(-5px); /* Animación hacia arriba en móvil, en vez de a los lados */
+        transform: translateY(-5px); /* En móvil la animación es hacia arriba */
     }
 }

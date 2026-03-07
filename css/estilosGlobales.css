@@ -1,3 +1,4 @@
+/* Variables Globales */
 :root {
     --colorDorado: #c5a059;
     --colorBlanco: #ffffff;
@@ -7,6 +8,7 @@
     --fuenteSans: 'Arial', sans-serif;
 }
 
+/* Reseteo Básico */
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +20,7 @@ body {
     color: var(--colorBlanco);
     font-family: var(--fuenteSans);
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Evita scroll horizontal en móviles */
 }
 
 h1, h2, h3 {
@@ -27,12 +29,13 @@ h1, h2, h3 {
     font-weight: normal;
 }
 
+/* --- NAVEGACIÓN GLOBAL --- */
 .encabezadoPrincipal {
     position: absolute; 
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px;
+    padding: 20px 5%;
     z-index: 100;
 }
 
@@ -45,12 +48,13 @@ h1, h2, h3 {
 .logotipoTextual {
     font-family: var(--fuenteSerif);
     font-style: italic;
-    font-size: 1.5rem;
+    font-size: 22px; /* Un poco más pequeña y fina */
     color: var(--colorBlanco);
     z-index: 102;
     position: relative;
 }
 
+/* --- ELEMENTOS DEL MENÚ MÓVIL --- */
 .checkboxOculto {
     display: none;
 }
@@ -66,12 +70,13 @@ h1, h2, h3 {
 
 .iconoHamburguesa span {
     display: block;
-    width: 30px;
+    width: 28px; /* Un poco más minimalista */
     height: 2px;
     background-color: var(--colorBlanco);
     transition: all 0.4s ease;
 }
 
+/* --- CONTENEDOR DE ENLACES --- */
 .contenedorEnlacesWeb {
     display: flex;
     align-items: center;
@@ -80,13 +85,13 @@ h1, h2, h3 {
 .listaNavegacion {
     display: flex;
     list-style: none;
-    gap: 35px;
+    gap: 30px; /* Separación más estilizada */
 }
 
 .enlaceNavegacion {
     text-decoration: none;
     color: var(--colorGrisClaro);
-    font-size: 0.85rem;
+    font-size: 13px; /* Letra más pequeña y fina */
     letter-spacing: 2px;
     transition: color 0.3s ease;
 }
@@ -97,9 +102,12 @@ h1, h2, h3 {
 
 .activo {
     border-bottom: 1px solid var(--colorDorado);
-    padding-bottom: 5px;
+    padding-bottom: 4px;
 }
 
+/* =========================================
+   MEDIA QUERIES: MENÚ MÓVIL (SIN CAMBIOS)
+   ========================================= */
 @media (max-width: 900px) {
     .iconoHamburguesa {
         display: flex; 
@@ -121,11 +129,11 @@ h1, h2, h3 {
     .listaNavegacion {
         flex-direction: column;
         align-items: center;
-        gap: 40px;
+        gap: 35px;
     }
 
     .enlaceNavegacion {
-        font-size: 1.4rem;
+        font-size: 20px; /* Un poco más pequeña en móvil */
     }
 
     .checkboxOculto:checked ~ .contenedorEnlacesWeb {
